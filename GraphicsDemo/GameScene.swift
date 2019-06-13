@@ -38,7 +38,7 @@ class GameScene: SKScene {
             timePerFrame: 0.1)
         
         // 3. Repeat the animation forever
-        
+        self.dino.run(SKAction.repeatForever(walkingAnimation))
         
     }
     
