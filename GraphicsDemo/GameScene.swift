@@ -92,7 +92,7 @@ class GameScene: SKScene {
             print("PRESSED THE BUTTON")
             
             let jumpAction = SKAction.applyImpulse(
-                CGVector(dx:0, dy:3000),
+                CGVector(dx:0, dy:2000),
                 duration: 0.5)
             
             self.dino.run(jumpAction)
