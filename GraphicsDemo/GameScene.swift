@@ -26,16 +26,16 @@ class GameScene: SKScene {
         // 1. make an array of images for the animation
         // -- SKTexture = Object to hold images
         var dinoTextures:[SKTexture] = []
-
-     
         for i in 1...15 {
             let fileName = "Walk\(i)"
             print("Adding: \(fileName) to array")
             dinoTextures.append(SKTexture(imageNamed: fileName))
         }
         
-        
         // 2. Tell Spritekit to use that array to create your animation
+        let walkingAnimation = SKAction.animate(
+            with: dinoTextures,
+            timePerFrame: 0.1)
         
         // 3. Repeat the animation forever
         
