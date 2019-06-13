@@ -13,12 +13,12 @@ class GameScene: SKScene {
     
     
     // sprites
-    var changeDirectionButton:SKLabelNode!
+    var jumpButton:SKLabelNode!
     var dino:SKNode!
     
     override func didMove(to view: SKView) {
         //  get sprites from Scene Kit Editor
-        self.changeDirectionButton = self.childNode(withName: "directionButton") as! SKLabelNode
+        self.jumpButton = self.childNode(withName: "jumpButton") as! SKLabelNode
         self.dino = self.childNode(withName: "dino")
         
         // Show animation for dinosaur
@@ -88,21 +88,8 @@ class GameScene: SKScene {
         let spriteTouched = self.atPoint(mouseLocation)
         
         // check if person pressed the button
-        if (spriteTouched.name == "directionButton") {
+        if (spriteTouched.name == "jumpButton") {
             print("PRESSED THE BUTTON")
-            if (lookingDir == "right") {
-                // flip image left
-                let lookLeft = SKAction.scaleX(to: -1, duration: 0)
-                self.dino.run(lookLeft)
-                lookingDir = "left"
-            }
-            else if (lookingDir == "left") {
-                // flip image right
-                let lookRightAction = SKAction.scaleX(to: 1, duration: 0)
-                self.dino.run(lookRightAction)
-                lookingDir = "right"
-            }
-            
         }
     }
     
