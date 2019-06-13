@@ -38,6 +38,10 @@ class GameScene: SKScene {
         // check if person pressed the button
         if (spriteTouched.name == "directionButton") {
             print("PRESSED THE BUTTON")
+            
+            let lookLeft = SKAction.scaleX(to: -1, duration: 0)
+            self.dino.run(lookLeft)
+            
         }
     }
     
