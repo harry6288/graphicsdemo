@@ -44,6 +44,13 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
+        // OPTION 1: Using manual movement
+        self.dino.position.x = self.dino.position.x + 2
+        // OPTION 2: Using SKActions
+        // let walkingAction = SKAction.moveBy(x: 2, y: 0, duration: 0)
+        // self.dino.run(walkingAction)
+        
     }
     
     
