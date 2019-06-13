@@ -20,6 +20,16 @@ class GameScene: SKScene {
         //  get sprites from Scene Kit Editor
         self.changeDirectionButton = self.childNode(withName: "directionButton") as! SKLabelNode
         self.dino = self.childNode(withName: "dino")
+        
+        // Show animation for dinosaur
+        // ----------------------------
+        // 1. make an array of images for the animation
+        
+        // 2. Tell Spritekit to use that array to create your animation
+        
+        // 3. Repeat the animation forever
+        
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
