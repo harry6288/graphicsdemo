@@ -24,6 +24,13 @@ class GameScene: SKScene {
         // Show animation for dinosaur
         // ----------------------------
         // 1. make an array of images for the animation
+        // -- SKTexture = Object to hold images
+        var dinoTextures:[SKTexture] = []
+        for i in 1...4 {
+            let fileName = "frame-\(i)"
+            print("Adding: \(fileName) to array")
+            dinoTextures.append(SKTexture(imageNamed: fileName))
+        }
         
         // 2. Tell Spritekit to use that array to create your animation
         
