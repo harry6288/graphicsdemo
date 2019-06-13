@@ -26,8 +26,8 @@ class GameScene: SKScene {
         // 1. make an array of images for the animation
         // -- SKTexture = Object to hold images
         var dinoTextures:[SKTexture] = []
-        for i in 1...15 {
-            let fileName = "Walk\(i)"
+        for i in 1...4 {
+            let fileName = "frame-\(i)"
             print("Adding: \(fileName) to array")
             dinoTextures.append(SKTexture(imageNamed: fileName))
         }
@@ -46,10 +46,28 @@ class GameScene: SKScene {
         // Called before each frame is rendered
         
         // OPTION 1: Using manual movement
-        self.dino.position.x = self.dino.position.x + 2
+        if (lookingDir == "right") {
+            self.dino.position.x = self.dino.position.x + 10
+        }
+        else if (lookingDir == "left") {
+            self.dino.position.x = self.dino.position.x - 10
+        }
         // OPTION 2: Using SKActions
         // let walkingAction = SKAction.moveBy(x: 2, y: 0, duration: 0)
         // self.dino.run(walkingAction)
+        
+        // ------------
+        // Detect collision with right wall
+        // ------------
+        if (self.dino.position.x >= self.size.width) {
+            lookingDir = "left"
+        }
+        
+        if (self.dino.position.x <= 0) {
+            lookingDir = "right"
+        }
+        
+        
         
     }
     
