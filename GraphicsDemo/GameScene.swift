@@ -26,11 +26,14 @@ class GameScene: SKScene {
         // 1. make an array of images for the animation
         // -- SKTexture = Object to hold images
         var dinoTextures:[SKTexture] = []
-        for i in 1...4 {
-            let fileName = "frame-\(i)"
+
+     
+        for i in 1...15 {
+            let fileName = "Walk\(i)"
             print("Adding: \(fileName) to array")
             dinoTextures.append(SKTexture(imageNamed: fileName))
         }
+        
         
         // 2. Tell Spritekit to use that array to create your animation
         
@@ -54,7 +57,7 @@ class GameScene: SKScene {
         
         let mouseLocation = touch!.location(in:self)
         let spriteTouched = self.atPoint(mouseLocation)
-   
+        
         // check if person pressed the button
         if (spriteTouched.name == "directionButton") {
             print("PRESSED THE BUTTON")
