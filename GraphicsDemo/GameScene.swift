@@ -26,6 +26,9 @@ class GameScene: SKScene {
         // Called before each frame is rendered
     }
     
+    
+    var lookingDir = "right"
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         if (touch == nil) {
@@ -38,9 +41,17 @@ class GameScene: SKScene {
         // check if person pressed the button
         if (spriteTouched.name == "directionButton") {
             print("PRESSED THE BUTTON")
-            
-            let lookLeft = SKAction.scaleX(to: -1, duration: 0)
-            self.dino.run(lookLeft)
+            if (lookingDir == "right") {
+                // turn him left
+                let lookLeft = SKAction.scaleX(to: -1, duration: 0)
+                self.dino.run(lookLeft)
+                lookingDir = "left"
+            }
+            else if (lookingDir == "left") {
+                let lookRightAction = SKAction.scaleX(to: 1, duration: 0)
+                self.dino.run(lookRightAction)
+                lookingDir = "right"
+            }
             
         }
     }
