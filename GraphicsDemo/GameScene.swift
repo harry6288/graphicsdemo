@@ -42,12 +42,13 @@ class GameScene: SKScene {
         if (spriteTouched.name == "directionButton") {
             print("PRESSED THE BUTTON")
             if (lookingDir == "right") {
-                // turn him left
+                // flip image left
                 let lookLeft = SKAction.scaleX(to: -1, duration: 0)
                 self.dino.run(lookLeft)
                 lookingDir = "left"
             }
             else if (lookingDir == "left") {
+                // flip image right
                 let lookRightAction = SKAction.scaleX(to: 1, duration: 0)
                 self.dino.run(lookRightAction)
                 lookingDir = "right"
