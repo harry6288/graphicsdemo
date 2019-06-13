@@ -11,8 +11,15 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    override func didMove(to view: SKView) {
     
+    // sprites
+    var changeDirectionButton:SKLabelNode!
+    var dino:SKNode!
+    
+    override func didMove(to view: SKView) {
+        //  get sprites from Scene Kit Editor
+        self.changeDirectionButton = self.childNode(withName: "directionButton") as! SKLabelNode
+        self.dino = self.childNode(withName: "dino")
     }
     
     override func update(_ currentTime: TimeInterval) {
