@@ -60,10 +60,14 @@ class GameScene: SKScene {
         // Detect collision with right wall
         // ------------
         if (self.dino.position.x >= self.size.width) {
+            let lookLeftAction = SKAction.scaleX(to: -1, duration: 0)
+            self.dino.run(lookLeftAction)
             lookingDir = "left"
         }
         
         if (self.dino.position.x <= 0) {
+            let lookRightAction = SKAction.scaleX(to: 1, duration: 0)
+            self.dino.run(lookRightAction)
             lookingDir = "right"
         }
         
