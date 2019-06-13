@@ -25,4 +25,20 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        if (touch == nil) {
+            return
+        }
+        
+        let mouseLocation = touch!.location(in:self)
+        let spriteTouched = self.atPoint(mouseLocation)
+   
+        // check if person pressed the button
+        if (spriteTouched.name == "directionButton") {
+            print("PRESSED THE BUTTON")
+        }
+    }
+    
 }
