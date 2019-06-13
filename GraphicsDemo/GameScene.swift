@@ -90,6 +90,12 @@ class GameScene: SKScene {
         // check if person pressed the button
         if (spriteTouched.name == "jumpButton") {
             print("PRESSED THE BUTTON")
+            
+            let jumpAction = SKAction.applyImpulse(
+                CGVector(dx:0, dy:3000),
+                duration: 0.5)
+            
+            self.dino.run(jumpAction)
         }
     }
     
